@@ -148,8 +148,10 @@ Lernpunkte der Musterlösung, vor der persönlichen Abgabe selbst nachvollziehen
 
 ## Git und Abgabe
 
-Die Musterlösung wird über den Branch `feature/aufgabenblatt-52` und einen Pull
-Request nach `main` veröffentlicht. Die optionale Aufteilung in mehrere Dateien
+Die Musterlösung wurde über den Branch `feature/aufgabenblatt-52` und
+[Pull Request #2](https://github.com/Julik527/bibliothek-cpp/pull/2) nach `main`
+veröffentlicht. Der frische Klon wurde ohne Compilerwarnungen gebaut und bestand
+alle 29 Prüfungen. Die optionale Aufteilung in mehrere Dateien
 ist als [Issue #1](https://github.com/Julik527/bibliothek-cpp/issues/1) erfasst.
 
 Der Import ersetzt nicht die geforderten mindestens sieben eigenen Arbeitsschritte.

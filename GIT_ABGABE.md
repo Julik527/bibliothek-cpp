@@ -1,8 +1,9 @@
 # Git und Abgabe
 
 Dieses Repository veröffentlicht die KI-gestützte Musterlösung zu Aufgabenblatt 52.
-Der vollständige Code und die Dokumentation werden als zusammenhängender Import
-über `feature/aufgabenblatt-52` und einen Pull Request nach `main` übernommen.
+Der vollständige Code und die Dokumentation wurden als zusammenhängender Import
+über `feature/aufgabenblatt-52` und [Pull Request #2](https://github.com/Julik527/bibliothek-cpp/pull/2)
+nach `main` übernommen.
 Die optionale Erweiterung ist in [Issue #1](https://github.com/Julik527/bibliothek-cpp/issues/1)
 erfasst. Der Import bildet keine schrittweise eigene Entwicklung ab.
 
@@ -11,6 +12,22 @@ sieben sinnvollen Commits aus der tatsächlichen Arbeit und der Tag `v1.0` zu
 ergänzen. Die folgenden Abschnitte helfen bei diesen eigenen Arbeitsschritten.
 Die PDF- und Word-Dateien in `docs/` dokumentieren den Stand vor dem GitHub-Upload;
 für den Veröffentlichungsstand ist diese Datei maßgeblich.
+
+## Veröffentlichungsprüfung
+
+Der veröffentlichte Stand `664514779b803876ee67da52db34641460ec1c0a` wurde am
+02.10.2026 in ein neues Verzeichnis geklont und mit folgendem Befehl gebaut:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror src/main.cpp -o bibliothek
+./bibliothek
+```
+
+Ergebnis: keine Compilerwarnungen, alle 29 Prüfungen bestanden, Rückgabecode 0.
+`git status --short` blieb nach dem Build leer. Alle sieben Dateien, einschließlich
+PDF und Word-Dokument, stimmen bytegenau mit den für den Upload vorbereiteten
+Dateien überein. Diese Dokumentation der Prüfung ändert den geprüften Quellcode
+und die beiden Dokumentdateien nicht.
 
 ## 0. Repository klonen
 
@@ -51,7 +68,7 @@ git commit -m "Medium mit Enum und Validierung implementiert"
 
 ## 2. Feature-Branch und Pull Request
 
-Für den Import dieser Musterlösung wird `feature/aufgabenblatt-52` verwendet.
+Für den Import dieser Musterlösung wurde `feature/aufgabenblatt-52` verwendet.
 Das folgende Beispiel zeigt den Ablauf für einen eigenen weiteren Arbeitsschritt.
 
 Vor der Arbeit an Teil 2:
@@ -126,10 +143,10 @@ abgeben und bei einem privaten Repository die Lehrkraft als Collaborator einlade
 - [x] `src/main.cpp`, `README.md`, `REFLEXION.md` und `.gitignore` vorhanden.
 - [x] README enthält Build-Befehl, echte Beispielausgabe und 3 bis 5 Lernpunkte.
 - [ ] Mindestens sieben sinnvolle Commits aus dem tatsächlichen Verlauf.
-- [ ] Feature-Branch verwendet und nach `main` gemergt.
+- [x] Feature-Branch verwendet und nach `main` gemergt.
 - [x] Ein offenes Issue für eine Zusatzaufgabe vorhanden.
 - [x] Keine kompilierten Dateien und keine IDE-Dateien eingecheckt.
-- [ ] Frisch geklontes Repository baut und alle Tests bestehen.
+- [x] Frisch geklontes Repository baut und alle Tests bestehen.
 - [ ] Tag `v1.0` gepusht und Zugriff der Lehrkraft geklärt.
 
 Ein GitHub-Actions-Workflow ist laut Aufgabenblatt optional.
