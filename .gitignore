@@ -67,3 +67,16 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# Project executable and IDE files
+/bibliothek
+/bibliothek.exe
+.vscode/
+.idea/
+.vs/
+*.sln
+*.vcxproj*
+*.user
+*.suo
+.DS_Store
+Thumbs.db
