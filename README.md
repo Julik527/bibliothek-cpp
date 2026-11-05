@@ -168,3 +168,7 @@ nicht umgesetzt, da die Pflichtaufgabe eine einzige C++-Datei verlangt.
 
 Dokumentgestaltung © 2026 Julian Krauß. Designbasis: *Corporate Identity & Design
 System*, JK-CD-DE-2026-003, PDF-Revision 3.2, Release 4.6.3.
+
+## Laufende Qualitätsprüfung
+
+Die GitHub-Action [C++17 Build und Funktionstests](.github/workflows/cpp.yml) kompiliert `src/main.cpp` mit **GCC und Clang** jeweils als Debug- und Release-Build unter Linux. `-Werror` macht Compilerwarnungen zu Fehlern. Ein Build gilt nur dann als erfolgreich, wenn das Testprogramm mit Exitcode 0 endet und **29 Pruefungen bestanden.** ausgibt. Der Workflow prueft den aktuellen Branch bei Pull Requests; die erfolgreiche Ausfuehrung muss im Actions-Tab bestaetigt werden. Die fehlerhafte provisorische `tmp.cpp` wurde entfernt.
