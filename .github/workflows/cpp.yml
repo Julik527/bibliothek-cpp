@@ -1,0 +1,41 @@
+name: C++17 Build und Funktionstests
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - ".github/workflows/cpp.yml"
+  pull_request:
+    paths:
+      - "src/**"
+      - ".github/workflows/cpp.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [g++, clang++]
+        mode: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        shell: bash
+        run: |
+          mkdir -p build
+          if [ "${{ matrix.mode }}" = "Release" ]; then
+            FLAGS="-O2 -DNDEBUG"
+          else
+            FLAGS="-O0 -g"
+          fi
+          ${{ matrix.compiler }} -std=c++17 -Wall -Wextra -Wpedantic -Werror $FLAGS src/main.cpp -o build/bibliothek
+      - name: Automatische Pruefungen
+        shell: bash
+        run: |
+          ./build/bibliothek | tee build/test-output.txt
+          grep -Fxq '29 Pruefungen bestanden.' build/test-output.txt
